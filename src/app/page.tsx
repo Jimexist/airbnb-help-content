@@ -25,7 +25,7 @@ export default function Home({
           .slice(start, start + pageSize)
           .map(([article_id, obj]) => {
             return (
-              <li className="py-1">
+              <li key={article_id} className="py-1">
                 <Link href={`/article/${article_id}`}>
                   <span className="px-2 font-bold">[{article_id}]</span>
                   <span>{obj.title}</span>

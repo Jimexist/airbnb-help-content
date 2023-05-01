@@ -10,8 +10,12 @@ export default function Article({ params }: { params: { articleId: string } }) {
     <main className="flex flex-col min-h-screen items-center flex-start p-24">
       <h1 className="text-2xl py-7">{article.title}</h1>
       <div className="my-3">
-        {article.content.split("\n").map((paragraph) => {
-          return <p className="my-2">{paragraph}</p>;
+        {article.content.split("\n").map((paragraph, idx) => {
+          return (
+            <p key={idx} className="my-2">
+              {paragraph}
+            </p>
+          );
         })}
       </div>
       <p className="my-3">
